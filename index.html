@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Privacidade - MentisAI</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.0/github-markdown.min.css">
+  <style>
+    body {
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 45px;
+    }
+    @media (max-width: 767px) {
+      body {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body class="markdown-body">
+  <div id="content">Carregando Política de Privacidade...</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <script>
+    // Substitua 'politica.md' pelo nome exato do seu arquivo .md
+    fetch('privacy-police.md')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Não foi possível carregar o arquivo .md');
+        }
+        return response.text();
+      })
+      .then(markdownText => {
+        document.getElementById('content').innerHTML = marked.parse(markdownText);
+      })
+      .catch(error => {
+        console.error('Erro:', error);
+        document.getElementById('content').innerHTML = '<p>Erro ao carregar a política de privacidade.</p>';
+      });
+  </script>
+</body>
+</html>
